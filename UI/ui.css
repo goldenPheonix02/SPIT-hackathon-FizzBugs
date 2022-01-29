@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #cefdff;
+	background: linear-gradient(180deg, #f1fffa 0%, #ccfccb 50%, #96e6b3 100%);
+}
+.container {
+	min-height: 10vh;
+	width: 100%;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+}
+#header {
+	position: fixed;
+	margin: 0 auto;
+	width: 100vw;
+	display: block;
+	align-items: center;
+	text-align: center;
+}
+#header .header {
+	min-height: 8vh;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	color: white;
+	font-family: "Baloo Bhai 2", serif;
+	text-align: center;
+	margin-bottom: 20px;
+	transition: 0.5s ease opacity;
+}
+#header .header.scrolled {
+	opacity: 0.5;
+	z-index: -1;
+}
+
+#header .header span {
+	color: crimson;
+}
+#header .header h1 {
+	font-size: 2em;
+	/* text-transform: uppercase; */
+	letter-spacing: 0.1em;
+	margin-left: 20px;
+	padding: 2px;
+}
+.row {
+	display: flex;
+}
+.college {
+	margin: auto;
+	margin-top: 11vh;
+	text-align: center;
+	font-family: "Baloo Bhai 2", serif;
+	padding: 1em 0;
+	border: 2px solid #1b9aaa;
+	border-radius: 10px;
+	width: 6em;
+	font-size: 2em;
+	box-shadow: 2px 2px 4px #1b9aaa;
+	transition: all 0.5s ease-out;
+}
+.college:hover {
+	width: 8em;
+	padding: 2.2em 0;
+	border-radius: 16px;
+	box-shadow: 5px 5px 10px #1b9aaa;
+}
