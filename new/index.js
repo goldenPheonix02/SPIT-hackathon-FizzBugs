@@ -11,24 +11,71 @@ fetch("./data.json")
 
 console.log(c_data);
 
+function addDropDown(name) {
+    const child = document.createElement("a")
+        // child.attribute("href", ["#"])
+    child.innerText = name
+    document.getElementById("myDropdown").appendChild(child);
+}
+
+
+// JSON.parse(c_data).map((e) => { addDropDown(e["college"]) })
+
+for (var i = 0; i < c_data.length; i++) {
+    addDropDown(c_data[i]["college"])
+}
+
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
 
 function getColleges(choice) {
+    // console.log(choice.cutoff);
     var arr = []
     for (var i = 0; i < c_data.length; i++) {
         var flag = 0
         var cur_all = c_data[i]["exam-type"].concat(c_data[i]["domain"])
-            // console.log(cur_all);
+
         for (var j = 0; j < choice.data_all.length; j++) {
             if (cur_all.includes(choice.data_all[j])) {
 
+
+                if (choice.cutoff <= parseInt(c_data[i]["cutoff"])) {
+                    arr.push(c_data[i]);
+                    console.log(c_data[i], choice.data_all[j]);
+
+                }
+
+            }
+
+        }
+
+        if (choice.data_all.length == 0) {
+            if (choice.cutoff <= parseInt(c_data[i]["cutoff"])) {
+                arr.push(c_data[i]);
                 console.log(c_data[i], choice.data_all[j]);
 
-                if (choice.cutoff >= c_data[i]["cutoff"]) {
-
-                    arr.push(c_data[i]);
-                }
             }
         }
+
     }
     return uniq = [...new Set(arr)];
 }
@@ -86,10 +133,10 @@ function initMap() {
     var loc = new google.maps.LatLng(19.1364, 72.8484);
     infowindow = new google.maps.InfoWindow();
 
-    // map = new google.maps.Map(document.getElementById("map"), {
-    //     center: loc,
-    //     zoom: 12,
-    // });
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: loc,
+        zoom: 12,
+    });
 
 
     const input1 = document.querySelector("#radius")
@@ -97,7 +144,7 @@ function initMap() {
     const filter = document.getElementById("fil")
         // console.log(input.value);
 
-    document.querySelector("button").addEventListener("click", (e) => {
+    document.querySelector("#mapSearch").addEventListener("click", (e) => {
         e.preventDefault()
         map = new google.maps.Map(document.getElementById("map"), {
             center: loc,
@@ -184,7 +231,6 @@ function initMap() {
 
         }
         console.log(array[0], "e"); //ARRAY OF COLLEGES
-        // console.log(array[0]);
 
     })
 
@@ -240,13 +286,6 @@ function createMarker(place) {
     let cho = document.getElementById("chosen");
 
     if (!place.geometry || !place.geometry.location) return;
-
-
-    // const collg = document.createElement("div")
-    // collg.innerText = place.name;
-    // var parent = document.getElementsByClassName("row")[0]
-    // collg.classList.add("college")
-    // parent.appendChild(collg)
 
 
     const marker = new google.maps.Marker({

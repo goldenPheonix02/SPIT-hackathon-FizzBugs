@@ -24,6 +24,21 @@
     <section id="header">
         <div class="header container">
             <h1><span>C</span>ollege <span>F</span>inder</h1>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Search by College</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Enter College Name" id="myInput" onkeyup="filterFunction()">
+                    <a href="Hackathon/index.html">Sardar Patel Institute of Technology</a>
+                    <!-- <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a> -->
+                </div>
+            </div>
+
         </div>
     </section>
     <section id="form">
@@ -39,7 +54,7 @@
                 </div>
             </form>
         </div>
-        <button type="submit" class="search">Search</button>
+        <button id="mapSearch" type="submit" class="search">Search</button>
     </section>
 
     <div id="map"></div>
@@ -77,7 +92,7 @@
                     <div class="slidecontainer">
                         <h4>Cut-off</h4>
                         <h4 id="sliderVal">50</h4>
-                        <input type="range" min="50" max="1000" value="69" class="slider" id="myRange">
+                        <input type="range" min="50" max="1600" value="50" class="slider" id="myRange">
                     </div>
 
                 </div>
@@ -105,6 +120,8 @@
 
 
 
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <!-- End of ChatBot code -->
 
     <script src="app.js"></script>
 
@@ -115,6 +132,9 @@
     <script src="findCollege.js"></script>
     <script src="index.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFp8WWyiY3Im1Q836rD0xzR5KrzYBjZzo&callback=initMap&v=weekly&libraries=places" async></script>
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+
+    <!-- End of ChatBot code -->
 </body>
 
 
