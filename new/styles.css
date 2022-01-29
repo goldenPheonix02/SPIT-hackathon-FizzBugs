@@ -1,0 +1,267 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+#map {
+    height: 70%;
+    /* position: relative; */
+    /* top: 200px; */
+    width: 95%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+    height: 100%;
+    /* margin: 0 10px; */
+    /* margin-top: 100px; */
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+    z-index: 1;
+    margin: 0 auto;
+    width: 100vw;
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+#header .header {
+    min-height: 8vh;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    color: white;
+    font-family: 'Baloo Bhai 2', serif;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.5s ease opacity;
+}
+
+#header .header.scrolled {
+    opacity: 0;
+    /* z-index: -1; */
+}
+
+#header .header span {
+    color: crimson;
+}
+
+#header .header h1 {
+    font-size: 2.3em;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.1em;
+    margin-left: 20px;
+    padding: 2px;
+}
+
+#form {
+    margin-top: 100px;
+}
+
+#form .form {
+    /* position: relative; */
+    /* top: 100px; */
+    /* left: 40px; */
+    /* margin-top: 100px; */
+    width: 70%;
+    padding: 0 50px;
+    /* justify-content: center; */
+    font-family: 'Montserrat', serif;
+    font-size: 1.2em;
+    /* background-color: aqua; */
+}
+
+form {
+    display: flex;
+    /* margin-right: 20px; */
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#form .form .radius {
+    text-align: center;
+}
+
+#form .form .location {
+    position: relative;
+    left: 400px;
+    text-align: center;
+}
+
+ ::placeholder {
+    font-size: 1.1em;
+}
+
+.search {
+    font-family: 'Montserrat', serif;
+    margin: auto;
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    /* position: relative; */
+    /* top: 20px; */
+    font-size: 1.2em;
+    padding: 5px 15px;
+    outline: none;
+    background-color: #fff;
+    /* color: #fff; */
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+.search:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all .2s;
+}
+
+h3 {
+    margin: auto;
+}
+
+.results {
+    font-family: 'Montserrat', serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.results>div {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.filter-bar {
+    flex-grow: 1;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    align-self: flex-start;
+}
+
+.result-bar {
+    align-self: flex-start;
+    flex-grow: 5;
+    max-width: 80%;
+}
+
+#filter {
+    min-height: 100px;
+}
+
+.params {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.params>h4 {
+    margin-top: 10px;
+}
+
+.options {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 3px;
+    column-gap: 10px;
+    row-gap: 7px;
+}
+
+.option {
+    text-align: center;
+    border: 1px solid;
+    color: #222;
+    padding: 4px 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.option:hover {
+    color: #fff;
+    background-color: #222;
+    border-radius: 7px;
+}
+
+.selected {
+    background-color: #222;
+    color: #fff;
+}
+
+.slidecontainer {
+    margin-top: 10px;
+}
+
+.slidecontainer #myRange {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.filter-bar button {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    padding: 7px 10px;
+    border: 2px dashed #222;
+    background-color: #fff;
+}
+
+.filter-bar button:hover {
+    background-color: rgb(35, 84, 219);
+    color: #fff;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.college {
+    margin: auto;
+    padding: 5px 10px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: "Baloo Bhai 2", serif;
+    border: 2px solid #1b9aaa;
+    border-radius: 7px;
+    width: 100%;
+    /* max-width: 50%; */
+    font-size: 1.2em;
+    box-shadow: 1px 1px 2px #1b9aaa;
+}
+
+.college:hover {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
