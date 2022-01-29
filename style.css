@@ -3,12 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    
+}
 .container {
     min-height: 10vh;
     width: 100%;
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    /* position: relative; */
   }
 #header{
     position: fixed;
@@ -44,43 +48,94 @@
     padding: 2px;
 }
 
-#form .form{
+#info {
+    /* width: 90%; */
+    position: relative;
+    margin: 40x;
+    top: 100px;
+    font-family: 'Baloo Bhai 2',serif;
+    color: crimson;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#info .info h1{
+    /* margin: 5px; */
+    padding: auto;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+#data .details{
+    display: flex;
+    flex-direction: row;
+}
+
+#data .data {
     position: relative;
     top: 100px;
-    left: 40px;
-    width: 70%;
-    padding: 0 50px;
-    /* justify-content: center; */
+    width: 37%;
     font-family: 'Montserrat',serif;
+    color: crimson;
+    margin-left: 60px;
     font-size: 1.2em;
-    /* background-color: aqua; */
+    word-spacing: 10px;
+    line-height: 1.6;
+}
+#data .table{
+    position: relative;
+    top: 100px;
+    font-family: 'Montserrat',serif;
+    color: crimson;
+    margin-left: 60px;
+}
+#data .data p{
+    padding-top: 20px;
+    color: #29323c;
+}
+.grid{
+    display: grid;
+  grid-template-columns: 400px 400px;
+  grid-gap: 5px;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
+  padding: 5px;
+  height: 550px;
+  font-family: 'Baloo Bhai 2',serif;
+  border-radius: 5px;
+  background-color: transparent;
 }
 
-form{
-    display: flex;
-    /* margin-right: 20px; */
-}
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.grid > div {
+    background-color: white;
     text-align: center;
+    padding: 10px 10px;
+    font-size: 1.4em;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    display: flex;
+    color: black;
   }
 
-  #form .form .radius{
-      /* left: 20px; */
-      text-align: center;
+  .grid > div img{
+      height: 30px;
+      width: 30px;
+      /* margin-left: 20px; */
+  }
+  .grid > div a{
+      font-size: 0.8em;
+      color: crimson;
+  }
+  .grid > div a:hover{
+      color: blue;
   }
 
-  #form .form .location{
-      position: relative;
-      left: 400px;
-      text-align: center;
+  .grid > div img{
+     margin-right: 20px;
   }
-  ::placeholder {
-      font-size: 1.1em;
+
+  .grid .red{
+      color: crimson;
   }
