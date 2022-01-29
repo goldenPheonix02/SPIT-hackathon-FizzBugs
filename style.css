@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
+#header{
+    position: fixed;
+    margin: 0 auto;
+    width: 100vw;
+    display: block;
+    align-items: center;
+    text-align: center;
+    
+}
+#header .header{
+    min-height: 8vh;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    color: white;
+    font-family: 'Baloo Bhai 2',serif;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.5s ease opacity;
+}
+#header .header.scrolled{
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#header .header span{
+    color: crimson;
+}
+#header .header h1{
+    font-size: 2em;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.1em;
+    margin-left: 20px ;
+    padding: 2px;
+}
+
+#form .form{
+    position: relative;
+    top: 100px;
+    left: 40px;
+    width: 70%;
+    padding: 0 50px;
+    /* justify-content: center; */
+    font-family: 'Montserrat',serif;
+    font-size: 1.2em;
+    /* background-color: aqua; */
+}
+
+form{
+    display: flex;
+    /* margin-right: 20px; */
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  #form .form .radius{
+      /* left: 20px; */
+      text-align: center;
+  }
+
+  #form .form .location{
+      position: relative;
+      left: 400px;
+      text-align: center;
+  }
+  ::placeholder {
+      font-size: 1.1em;
+  }
