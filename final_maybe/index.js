@@ -127,7 +127,7 @@ function appendCollege(name) {
     collg.appendChild(hr)
 
     const anchor = document.createElement("a")
-    anchor.href = "/clginfo.html?college=" + name
+    anchor.href = "clginfo.html?college=" + name
 
     const inner_div = document.createElement("div")
     inner_div.innerHTML += '<span>Know More</span>'
