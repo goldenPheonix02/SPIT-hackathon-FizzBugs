@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hackathon</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <div class="header container">
+            <h1><span>C</span>ollege <span>F</span>inder</h1>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Search by College</button>
+                <div id="myDropdown" class="dropdown-content">
+
+
+                    <form action="lol.html" id="dropForm">
+                        <input type="text" name="college" placeholder="Enter College Name" id="myInput" onkeyup="filterFunction()">
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="form">
+        <div class="form container">
+            <form action="">
+                <div class="radius">
+                    <label for="radius">Enter the radius</label>
+                    <input type="text" id="radius" name="radius" placeholder="Enter the radius(km)" />
+                </div>
+                <div class="location">
+                    <label for="radius">Enter the location</label>
+                    <input type="text" id="location" name="location" placeholder="Enter the location" autocomplete="off" />
+                </div>
+            </form>
+        </div>
+        <button id="mapSearch" type="submit" class="search">Search</button>
+    </section>
+
+    <div id="map"></div>
+
+    <div class="map-selected"></div>
+    <hr>
+
+    <div id="filter">
+        <div class="results">
+
+            <div class="filter-bar">
+                <h3>Filter results</h3>
+
+                <div class="params">
+
+                    <h4>Entrance Exam</h4>
+
+                    <div class="options ee">
+                        <div class="option" name="ee" id="jee">Jee</div>
+                        <div class="option" id="cet">CET</div>
+                        <div class="option" id="boards">Boards</div>
+                        <div class="option" id="neet">NEET</div>
+
+                    </div>
+
+                    <h4>Branch</h4>
+
+                    <div class="options branch">
+                        <div class="option" id="Medical">Medical</div>
+                        <div class="option" id="arts">Arts</div>
+                        <div class="option" id="Engineering">Engineering</div>
+                        <div class="option" id="Commerce">Commerce</div>
+                        <div class="option" id="Law">Law</div>
+                        <div class="option" id="Management">Management</div>
+
+                    </div>
+                    <div class="slidecontainer">
+                        <h4>Cut-off</h4>
+                        <h4 id="sliderVal">50</h4>
+                        <input type="range" min="50" max="1600" value="50" class="slider" id="myRange">
+                    </div>
+
+                </div>
+
+                <button type="submit" id="fil">FILTER</button>
+
+
+
+            </div>
+            <div class="result-bar">
+                <h3>Results</h3>
+                <section id="collegeDisplay">
+                    <div class="row">
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+    <hr class="foot">
+
+    <footer>
+        By FizzBugs
+    </footer>
+
+
+
+
+
+
+
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <!-- End of ChatBot code -->
+
+    <!-- <script src="app.js"></script> -->
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cheerio/0.22.0/index.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="findCollege.js"></script> -->
+    <script src="index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFp8WWyiY3Im1Q836rD0xzR5KrzYBjZzo&callback=initMap&v=weekly&libraries=places" async></script>
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <!-- End of ChatBot code -->
+
+    <!-- End of ChatBot code -->
+</body>
+
+<script type="text/javascript">
+    window._be = window._be || {};
+    window.__be.id = "61f4e97ca4f7ee000761eac4";
+    (function() {
+        var be = document.createElement('script');
+        be.type = 'text/javascript';
+        be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(be, s);
+    })();
+</script>
+
+
+
+</html>
